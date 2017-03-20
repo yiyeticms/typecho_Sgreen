@@ -19,33 +19,28 @@
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/prism.css'); ?>">
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/iconfont.css'); ?>">
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/player.css'); ?>">
+<link rel="stylesheet" href="<?php $this->options->themeUrl('css/zoom.css'); ?>">
 <link href="<?php $this->options->ico() ?>" rel="shortcut icon">
 </head>
 <body>
 <header>
-<div class="main">
-<div class="intro"> <img src="<?php $this->options->logoUrl(); ?>" class="intro-logo"/> <span class="intro-sitename"><a href="<?php $this->options->siteUrl(); ?>">
-  <?php $this->options->title() ?>
-  </a></span> <span class="intro-siteinfo">
-  <?php $this->options->description() ?>
-  </span> <span class="social"> <a href="<?php $this->options->qqlink(); ?>" target="_blank"><i class="iconfont icon-qq"></i></a> <a href="<?php $this->options->mlink(); ?>" target="_blank"><i class="iconfont icon-mail"></i></a> <a href="<?php $this->options->wlink(); ?>" target="_blank"><i class="iconfont icon-weibo"></i></a> <a href="<?php $this->options->toutiaolink(); ?>" target="_blank"><i class="iconfont icon-toutiao"></i></a> <a href="<?php $this->options->glink(); ?>" target="_blank"><i class="iconfont icon-github"></i></a> <a href="<?php $this->options->qzlink(); ?>" target="_blank"><i class="iconfont icon-qzone"></i></a> </span> </div>
-<nav>
-  <div class="collapse"> <i class="iconfont icon-menu"></i></div>
-  <ul class="bar">
-    <li><a href="<?php $this->options->siteUrl(); ?>">首页</a></li>
-    <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-    <?php while($pages->next()): ?>
-    <li><a<?php if($this->is('page', $pages->slug)): ?><?php endif; ?> href="<?php $pages->permalink(); ?>">
-      <?php $pages->title(); ?>
-      </a></li>
-    <?php endwhile; ?>
-  </ul>
-</nav>
-<a class="icon-search" id="btnChange" onClick="searchbox();"></a>
-<div id="search" style="display:none">
-  <div class="icon-close" onClick="searchbox();"></div>
-  <form name="form" method="get" action="/index.php" id="searchform" class="search">
-    <input name="s" placeholder="输入关键字查找" autofocus="autofocus" type="search" id="searchText" style="margin-top:25%" />
-  </form>
-</div>
+  <div class="main">
+    <div class="intro"> <img src="<?php $this->options->logoUrl(); ?>" class="intro-logo"/> <span class="intro-sitename"><a href="<?php $this->options->siteUrl(); ?>">
+      <?php $this->options->title() ?>
+      </a></span> <span class="intro-siteinfo">
+      <?php $this->options->description() ?>
+      </span> <span class="social"> <a href="<?php $this->options->qqlink(); ?>" target="_blank"><i class="iconfont icon-qq"></i></a> <a href="<?php $this->options->mlink(); ?>" target="_blank"><i class="iconfont icon-mail"></i></a> <a href="<?php $this->options->wlink(); ?>" target="_blank"><i class="iconfont icon-weibo"></i></a> <a href="<?php $this->options->glink(); ?>" target="_blank"><i class="iconfont icon-github"></i></a> <a href="<?php $this->options->qzlink(); ?>" target="_blank"><i class="iconfont icon-qzone"></i></a> </span> </div>
+    <nav>
+      <div class="collapse"> <i class="iconfont icon-menu"></i></div>
+      <ul class="bar">
+        <li><a href="<?php $this->options->siteUrl(); ?>">首页</a></li>
+        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+        <?php while($pages->next()): ?>
+        <li><a<?php if($this->is('page', $pages->slug)): ?><?php endif; ?> href="<?php $pages->permalink(); ?>">
+          <?php $pages->title(); ?>
+          </a></li>
+        <?php endwhile; ?>
+      </ul>
+    </nav>
+    </div>
 </header>
