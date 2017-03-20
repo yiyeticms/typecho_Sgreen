@@ -92,7 +92,7 @@
 
 删除了默认的jquery.js和jquery.min.js调用，直接调用百度静态资源公共库里的
 
-去掉了QPlayer音乐播放器插件，直接集成到了模板里（详细介绍请看这里：http://yiyeti.cc/fenxiang/213.html）
+去掉了QPlayer音乐播放器插件，直接集成到了模板里（详细介绍请看这里：http://yiyeti.cc/fenxiang/132.html）
 
 后台加入主题外观css样式更改项，你可以任意更改你的主题前台颜色
 
