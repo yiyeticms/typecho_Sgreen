@@ -48,6 +48,12 @@ function themeConfig($form) {
 
     $qzlink = new Typecho_Widget_Helper_Form_Element_Text('qzlink', NULL, NULL, _t('你的QQ空间'), _t('在这里填入你的QQ空间地址'));
     $form->addInput($qzlink);
+
+    $toutiaolink = new Typecho_Widget_Helper_Form_Element_Text('toutiaolink', NULL, NULL, _t('你的今日头条'), _t('在这里填入你的今日头条地址'));
+    $form->addInput($toutiaolink);
+	
+	/*$weixin = new Typecho_Widget_Helper_Form_Element_Text('weixin', NULL, NULL, _t('你的微信二维码图片地址'), _t('在这里填入你的微信二维码图片地址'));
+    $form->addInput($weixin);*/
 	
 	$zddt = new Typecho_Widget_Helper_Form_Element_Text('zddt', NULL, NULL, _t('你的站点地图'), _t('在这里填入你的站点地图地址，若没有；请使用相关工具或插件生成'));
     $form->addInput($zddt);
@@ -62,3 +68,48 @@ function themeConfig($form) {
 	$zdbf = new Typecho_Widget_Helper_Form_Element_Text('zdbf', NULL, NULL, _t('音乐是否自动播放【必填】'), _t('在这里填写1或0来控制音乐是否自动播放，1为自动播放、0为不自动播放'));
     $form->addInput($zdbf);
 }
+/*
+
+function themeFields($layout) {
+    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('你的头像地址【必填】'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个自己的头像'));
+    $layout->addItem($logoUrl);
+	
+	$ico = new Typecho_Widget_Helper_Form_Element_Text('ico', NULL, NULL, _t('你的ico图标地址【必填】'), _t('在这里填入你的ICO图标地址，若没有你可以自行制作ico图标后放到站点根目录，在此处填入链接即可'));
+    $layout->addInput($ico);
+	
+    $qqlink = new Typecho_Widget_Helper_Form_Element_Text('qqlink', NULL, NULL, _t('你的QQ联系地址'), _t('在这里填入QQ联系地址，不知道请到QQ推广里获取代码'));
+	$layout->addInput($qqlink);
+	
+	 $mlink = new Typecho_Widget_Helper_Form_Element_Text('mlink', NULL, NULL, _t('你的联系邮箱'), _t('在这里填入你的邮箱联系地址'));
+    $layout->addInput($mlink);
+	
+	$wlink = new Typecho_Widget_Helper_Form_Element_Text('wlink', NULL, NULL, _t('你的联系微博'), _t('在这里填入你的微博联系地址'));
+    $layout->addInput($wlink);
+	
+    $glink = new Typecho_Widget_Helper_Form_Element_Text('glink', NULL, NULL, _t('你的github库'), _t('在这里填入你的github库地址'));
+    $layout->addInput($glink);
+
+    $qzlink = new Typecho_Widget_Helper_Form_Element_Text('qzlink', NULL, NULL, _t('你的QQ空间'), _t('在这里填入你的QQ空间地址'));
+    $layout->addInput($qzlink);
+
+    $toutiaolink = new Typecho_Widget_Helper_Form_Element_Text('toutiaolink', NULL, NULL, _t('你的今日头条'), _t('在这里填入你的今日头条地址'));
+    $layout->addInput($toutiaolink);
+	
+	$weixin = new Typecho_Widget_Helper_Form_Element_Text('weixin', NULL, NULL, _t('你的微信二维码图片地址'), _t('在这里填入你的微信二维码图片地址'));
+    $layout->addInput($weixin);
+	
+	$zddt = new Typecho_Widget_Helper_Form_Element_Text('zddt', NULL, NULL, _t('你的站点地图'), _t('在这里填入你的站点地图地址，若没有；请使用相关工具或插件生成'));
+    $layout->addInput($zddt);
+	
+	$wzdt = new Typecho_Widget_Helper_Form_Element_Text('wzdt', NULL, NULL, _t('你的网站地图或站点地图'), _t('在这里填入你的网站地图或站点地图地址，若没有；请使用相关工具或插件生成'));
+    $layout->addInput($wzdt);
+	
+	$music = new Typecho_Widget_Helper_Form_Element_Textarea('music', NULL, NULL, _t('在这里填入你的音乐链接【必填】'), _t('示例: {title:"丁香花",artist:"周玥",mp3:"http://p2.music.126.net/RNenjbsCEeeI2bnGB4EcPg==/2903810210384172.mp3",cover:"http://p4.music.126.net/O0MbXlINzZabpOEjZA-otA==/2929098977807667.jpg?param=106x106",},  你可以填写多首歌曲<br><h4 style="margin-bottom:5px;margin-top:12px;">添加网易云音乐(需主机支持curl扩展)</h4><div style="background-color:#467b96;padding:5px 10px;max-width:109px;border-radius: 2px;"><a href="'.Helper::options()->themeUrl.'/Music.php" target="_blank" style="font-size:14px;color:#fff;outline:none;text-decoration:none;">网易云音乐id解析</a>
+    </div><p style="font-size: .92857em;color: #999; margin-top: 4px; margin-bottom:15px;">请自行去网易云音乐网页版获取音乐id(具体在每个音乐项目的网址最后会有个id)。<b style="color: #888;">将解析出的音乐链接复制到上面歌曲列表里(注意检查与现有歌曲是否用英文,隔开)。单曲解析不支持国外的服务器(国外ip)! 有版权的音乐无法解析!</b></p>'));
+    $layout->addInput($music);
+	
+	$zdbf = new Typecho_Widget_Helper_Form_Element_Text('zdbf', NULL, NULL, _t('音乐是否自动播放【必填】'), _t('在这里填写数字1或0来控制音乐是否自动播放，1为自动播放/0为不自动播放'));
+    $layout->addInput($zdbf);
+}
+
+*/

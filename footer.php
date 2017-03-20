@@ -1,4 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<div class="willerce">
+<div> </div>
 <div id="QPlayer">
   <div id="pContent">
     <div id="player"> <span class="cover"></span>
@@ -42,28 +44,50 @@ function bgChange(){
 }
 window.onload = bgChange;
 </script>
-<script type="text/javascript">
-        var setupContents = function () {
-            $(".article-content img").each(function() {
-                $(this).attr('data-action', 'zoom');
-            });
-          
-        };
- setupContents();
-</script>
+<!--<div class="qrcode">
+  <img src="<?php $this->options->weixin() ?>" width="126" height="136" alt=""> </div>-->
 <footer>
   <p>
 <a href="<?php $this->options->zddt() ?>" target="_blank">站点地图</a> <a href="<?php $this->options->wzdt() ?>" target="_blank">网站地图</a><br>
 Copyright &copy; 2015-2017 <a href="<?php $this->options->siteUrl(); ?>">
     <?php $this->options->title() ?>
     </a> <br>
-    Powered by <a href="http://typecho.org/">Typecho</a>自豪的采用<a href="http://yiyeti.cc/zheteng/132.html" target="_blank">Sgreen</a>主题</p>
+    Powered by <a href="http://typecho.org/">Typecho</a>自豪的采用<a href="http://yiyeti.cc" target="_blank">Sgreen</a>主题</p>
   <?php $this->footer(); ?>
+<script>
+document.body.addEventListener('copy', function (e) {
+    if (window.getSelection().toString() && window.getSelection().toString().length > 10) {
+        setClipboardText(e);
+    }
+}); 
+function setClipboardText(event) {
+    var clipboardData = event.clipboardData || window.clipboardData;
+    if (clipboardData) {
+        event.preventDefault();
+        var htmlData = ''
+            + '著作权归作者所有。<br>'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br>'
+            + '作者：<?php $this->author() ?><br>'
+            + '链接：' + window.location.href + '<br>'
+            + '来源：<?php $this->options->siteUrl(); ?><br><br>'
+            + window.getSelection().toString();
+        var textData = ''
+            + '著作权归作者所有。\n'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+            + '作者：<?php $this->author() ?>\n'
+            + '链接：' + window.location.href + '\n'
+            + '来源：<?php $this->options->siteUrl(); ?>\n\n'
+            + window.getSelection().toString();
+        clipboardData.setData('text/html', htmlData);
+        clipboardData.setData('text/plain',textData);
+    }
+}
+</script>
 </footer>
 <div class="toTop">TOP</div>
 <script src="<?php $this->options->themeUrl('js/all.js'); ?>"></script>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
 <script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
-<script src="<?php $this->options->themeUrl('js/zoom.min.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/search.js'); ?>"></script>
 </body>
 </html>
