@@ -1,6 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-
 <content>
   <div class="main">
     <div class="article">
@@ -39,6 +38,7 @@
           </div>
         </div>
       </div>
+     <br>
       <?php $this->need('comments.php'); ?>
     </div>
   </div>

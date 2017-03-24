@@ -3,14 +3,13 @@
  * 这是一款小清新绿色Typecho主题。
  * @package Sgreen Theme 
  * @author 一夜涕
- * @version 2.6
+ * @version 2.7
  * @link http://yiyeti.cc
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  $this->need('header.php');
  ?>
-
 <content>
   <div class="main">
     <?php while($this->next()): ?>
@@ -32,7 +31,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
       <?php get_post_view($this) ?>
       </small>
       <div class="article-content">
+        <?php if ($this->options->Abstract == 'able'): ?>
         <?php $this->excerpt(135, '...'); ?>
+        <?php endif; ?>
+        <?php if ($this->options->Abstract == 'disable'): ?>
+        <?php $this->content(''); ?>
+        <?php endif; ?>
         <p class="readmore"><a href="<?php $this->permalink() ?>">阅读全文&gt;&gt;</a></p>
       </div>
     </div>

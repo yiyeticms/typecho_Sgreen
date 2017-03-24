@@ -516,7 +516,7 @@ body {
 	display: block;
 	margin: 0;
 	padding-bottom: 0;
-	color: #6e7173;
+	color: #1ABC9C;
 	border-bottom: 1px solid #ddd;
 	margin-top: 30px;
 }
@@ -526,9 +526,9 @@ body {
 	text-align: center;
 }
 
-.comments {
+#comments {
 	font-size: 14px;
-	margin-top: 60px;
+	margin-top: 20px;
 }
 
 .comments .comment-about {
@@ -553,7 +553,7 @@ body {
 /*博主的评论样式*/
 .comment-by-author > .comment-author  .fn::after {
 	display: inline-block;
-	content: 'Admin';
+	content: '博主';
 	transform: scale(0.8,0.8);
 	background: #ddd;
 	color: white;
@@ -665,7 +665,7 @@ body {
 }
 
 #comment-form {
-	padding-top: 12px;
+	padding-top: 0px;
 }
 
 #comment-form label {
@@ -721,4 +721,30 @@ textarea.text-area {
 
 textarea {
 	width: 100%;
+}
+
+.search {
+    text-align: center;
+	padding: 0 0 20px 0;
+}
+
+.search-form {
+    color: rgba(255,255,255,.95);
+    font-size: 14px;
+    display: inline-block;
+    border-bottom: 1px rgba(255,255,255,.95) solid;
+    line-height: 30px;
+}
+
+.search-field {
+    border: 0;
+    background-color: rgba(0,0,0,0);
+    color: rgba(255,255,255,.95);
+}
+
+button, input, textarea {
+    -webkit-appearance: none;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
 }

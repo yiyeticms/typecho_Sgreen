@@ -6,7 +6,6 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-
 <content>
   <div class="main">
     <div class="article">
@@ -33,13 +32,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
                     }
                     $output .= '<p>'.date('d日',$archives->created).' <a href="'.$archives->permalink .'">'. $archives->title .'</a></p>'; //输出文章
                 }
-                $output .= '</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>';
+                $output .= '</div></div></div>';
                 echo $output;
             ?>
       </div>
     </div>
+   <br>
     <?php $this->need('comments.php'); ?>
-  </div>
   </div>
 </content>
 <?php $this->need('footer.php'); ?>

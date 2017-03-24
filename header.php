@@ -16,11 +16,18 @@
 </title>
 <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&atom=&rss1=&rss2='); ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
+<?php if ($this->options->Prism== 'able'): ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/prism.css'); ?>">
+<?php endif; ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/iconfont.css'); ?>">
+<?php if ($this->options->Music== 'able'): ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/player.css'); ?>">
+<?php endif; ?>
+<?php if ($this->options->Zoom == 'able'): ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/zoom.css'); ?>">
+<?php endif; ?>
 <link href="<?php $this->options->ico() ?>" rel="shortcut icon">
+<?php $this->options->zdtj() ?>
 </head>
 <body>
 <header>
@@ -30,6 +37,15 @@
       </a></span> <span class="intro-siteinfo">
       <?php $this->options->description() ?>
       </span> <span class="social"> <a href="<?php $this->options->qqlink(); ?>" target="_blank"><i class="iconfont icon-qq"></i></a> <a href="<?php $this->options->mlink(); ?>" target="_blank"><i class="iconfont icon-mail"></i></a> <a href="<?php $this->options->wlink(); ?>" target="_blank"><i class="iconfont icon-weibo"></i></a> <a href="<?php $this->options->glink(); ?>" target="_blank"><i class="iconfont icon-github"></i></a> <a href="<?php $this->options->qzlink(); ?>" target="_blank"><i class="iconfont icon-qzone"></i></a> </span> </div>
+<?php if ($this->options->search == 'able'): ?>
+    <div class="search">
+      <form role="search" method="get" class="search-form is-active" action="/index.php">
+        <label> <span class="screen-reader-text">搜索：</span>
+        <input type="search" class="search-field" placeholder="在此搜索…" value="" name="s">
+        </label>
+      </form>
+    </div>
+<?php endif; ?>
     <nav>
       <div class="collapse"> <i class="iconfont icon-menu"></i></div>
       <ul class="bar">
@@ -42,5 +58,5 @@
         <?php endwhile; ?>
       </ul>
     </nav>
-    </div>
+  </div>
 </header>

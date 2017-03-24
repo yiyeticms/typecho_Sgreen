@@ -6,7 +6,6 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-
 <content>
   <div class="main">
     <div class="article">
@@ -16,6 +15,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
       <div class="article-content">
         <?php $this->content(); ?>
       </div>
+     <br>
     <?php $this->need('comments.php'); ?>
   </div>
   </div>
