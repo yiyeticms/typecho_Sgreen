@@ -31,7 +31,7 @@
 <?php if ($this->options->baiduJavaScript == 'able'): ?>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <?php endif; ?>
-<script src="<?php $this->options->themeUrl('js/jquery.marquee.min.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/jquery.marquee.min.js'); ?>" data-no-instant></script>
 <script>
 	var	playlist = [	
 <?php $this->options->music() ?>
@@ -39,7 +39,7 @@
   var isRotate = 1;
   var autoplay = <?php $this->options->zdbf() ?>;  
 </script>
-<script src="<?php $this->options->themeUrl('js/player.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/player.js'); ?>" data-no-instant></script>
 <script>
 function bgChange(){
 	var lis= $('.lib');
@@ -122,12 +122,12 @@ setInterval("scroll()", 500);
 <?php if ($this->options->baiduJavaScript == 'able'): ?>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <?php endif; ?>
-<script src="<?php $this->options->themeUrl('js/all.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/all.js'); ?>" data-no-instant></script>
 <?php if ($this->options->Prism== 'able'): ?>
-<script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/prism.js'); ?>" data-no-instant></script>
 <?php endif; ?>
 <?php if ($this->options->Zoom == 'able'): ?>
-<script src="<?php $this->options->themeUrl('js/zoom.min.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/zoom.min.js'); ?>" data-no-instant></script>
 <?php endif; ?>
 <?php if ($this->options->Instantclick == 'able'): ?>
 <script src="<?php $this->options->themeUrl('js/instantclick.min.js'); ?>" data-no-instant></script>
