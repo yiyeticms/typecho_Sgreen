@@ -40,7 +40,7 @@
   var autoplay = <?php $this->options->zdbf() ?>;  
 </script>
 <script src="<?php $this->options->themeUrl('js/player.js'); ?>" data-no-instant></script>
-<script>
+<script  data-no-instant>
 function bgChange(){
 	var lis= $('.lib');
 	for(var i=0; i<lis.length; i+=2)
@@ -50,7 +50,7 @@ window.onload = bgChange;
 </script>
 <?php endif; ?>
 <?php if ($this->options->Zoom == 'able'): ?>
-<script type="text/javascript">
+<script type="text/javascript" data-no-instant>
         var setupContents = function () {
             $(".article-content img").each(function() {
                 $(this).attr('data-action', 'zoom');
@@ -61,7 +61,7 @@ window.onload = bgChange;
 </script>
 <?php endif; ?>
 <?php if ($this->options->Copyright == 'able'): ?>
-<script>
+<script data-no-instant>
 document.body.addEventListener('copy', function (e) {
     if (window.getSelection().toString() && window.getSelection().toString().length > 42) {
         setClipboardText(e);
@@ -94,7 +94,7 @@ function setClipboardText(event) {
 </script>
 <?php endif; ?>
 <?php if ($this->options->Title== 'able'): ?>
-<script type="text/javascript"> 
+<script type="text/javascript" data-no-instant> 
 function scroll() { 
 var titleInfo = document.title;  
 var firstInfo = titleInfo.charAt(0); 
@@ -131,7 +131,6 @@ setInterval("scroll()", 500);
 <?php endif; ?>
 <?php if ($this->options->Instantclick == 'able'): ?>
 <script src="<?php $this->options->themeUrl('js/instantclick.min.js'); ?>" data-no-instant></script>
-<script data-no-instant>InstantClick.init();</script>
 <script data-no-instant>
 InstantClick.on('change', function(isInitialLoad) {
   if (isInitialLoad === false) {
@@ -147,8 +146,13 @@ InstantClick.on('change', function(isInitialLoad) {
     if (typeof ga !== 'undefined'){
         ga('send', 'pageview', location.pathname + location.search);
 }  // support google analytics
+if (typeof Tie !== 'undefined') {
+                        Tie.loader("", true);
+            }//网易云跟帖
   }
 });
+InstantClick.init('mousedown');
+</script>
 <?php endif; ?>
 </body>
 </html>
