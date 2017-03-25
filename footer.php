@@ -131,6 +131,7 @@ setInterval("scroll()", 500);
 <?php endif; ?>
 <?php if ($this->options->Instantclick == 'able'): ?>
 <script src="<?php $this->options->themeUrl('js/instantclick.min.js'); ?>" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
 <script data-no-instant>
 InstantClick.on('change', function(isInitialLoad) {
   if (isInitialLoad === false) {
