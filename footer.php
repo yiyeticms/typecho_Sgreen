@@ -107,11 +107,12 @@ setInterval("scroll()", 500);
 <?php if ($this->options->Lazyload== 'able'): ?>
 <script type="text/javascript" src="<?php $this->options->themeUrl('js/lazyload.js'); ?>"></script>
 <script type="text/javascript">
-jQuery(document).ready(function ($) {
-	$(".article-content img").find('img').lazyload({
-		placeholder: "<?php $this->options->themeUrl('img/loading.gif'); ?>",
-		effect: "fadeIn"
-	});
+jQuery(document).ready(
+function($){
+$("img").lazyload({
+     placeholder : "<?php $this->options->themeUrl('img/loading.gif'); ?>",
+     effect      : "fadeIn"
+});
 });
 </script>
 <?php endif; ?>
