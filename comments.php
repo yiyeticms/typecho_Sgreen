@@ -52,14 +52,13 @@
         </p>
         <?php endif; ?>
         <p>
-          <button type="submit" class="submit">
-          <?php _e('提交评论'); ?>
-          </button>
+          <button type="submit" class="submit" id="misubmit"><?php _e('提交评论'); ?></button>
         </p>
       </div>
       <div class="clear"></div>
     </form>
   </div>
   <?php else: ?>
-  <?php endif; ?>
-</div>
+    <h3>此处评论已关闭</h3>
+    <?php endif; ?>
+</div> 

@@ -1,5 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 function get_post_view($archive)
 {
     $cid    = $archive->
@@ -23,7 +24,7 @@ if(!in_array($cid,$views)){
        $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
 array_push($views, $cid);
             $views = implode(',', $views);
-            Typecho_Cookie::set('extend_contents_views', $views); //记录查看cookie
+            Typecho_Cookie::set('extend_contents_views', $views); 
         }
     }
     echo $row['views'];
@@ -34,9 +35,7 @@ function themeConfig($form) {
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('是否启用自动摘要'), _t('默认禁止，默认显示全文，在发布文章时请使用
-<!--more-->
-代码串分割文章摘要；启用则自动获取摘要'));
+        'disable', _t('是否启用自动摘要'), _t('默认禁止，默认显示全文，在发布文章时请使用“摘要分割线”工具；启用则自动获取摘要'));
 
     $form->addInput($Abstract);
 
@@ -75,6 +74,13 @@ function themeConfig($form) {
         'disable', _t('是否启用灯箱功能'), _t('默认禁止，启用则会在文章或页面加载灯箱效果'));
     $form->addInput($Zoom);
 
+    $Lazyload= new Typecho_Widget_Helper_Form_Element_Radio('Lazyload',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('是否启用图片懒加载'), _t('默认禁止，启用则会使用图片懒加载功能'));
+    $form->addInput($Lazyload);
+
 	$Prism= new Typecho_Widget_Helper_Form_Element_Radio('Prism',
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
@@ -86,7 +92,7 @@ function themeConfig($form) {
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('是否调用百度js库'), _t('默认禁止，启用则会调用百度js库加速网站'));
+        'disable', _t('是否调用百度js库'), _t('默认禁止，启用则会调用百度js库加速网站，注意：启用HTTPS的童鞋请禁止此选项'));
     $form->addInput($baiduJavaScript);
 
 	$Copyright= new Typecho_Widget_Helper_Form_Element_Radio('Copyright',
@@ -95,13 +101,6 @@ function themeConfig($form) {
         ),
         'disable', _t('是否启用版权保护功能'), _t('默认禁止，启用则别人在复制你的博文时会自动显示版权所有者'));
     $form->addInput($Copyright);
-
-	$Instantclick= new Typecho_Widget_Helper_Form_Element_Radio('Instantclick',
-        array('able' => _t('启用'),
-            'disable' => _t('禁止'),
-        ),
-        'disable', _t('是否启用Instantclick加速网站'), _t('默认禁止，启用则使用Instantclick加速网站'));
-    $form->addInput($Instantclick);
 
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('你的头像地址【必填】'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个自己的头像'));
     $form->addInput($logoUrl); 

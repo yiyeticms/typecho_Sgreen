@@ -31,7 +31,7 @@
 <?php if ($this->options->baiduJavaScript == 'able'): ?>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <?php endif; ?>
-<script src="<?php $this->options->themeUrl('js/jquery.marquee.min.js'); ?>" data-no-instant></script>
+<script src="<?php $this->options->themeUrl('js/jquery.marquee.min.js'); ?>"></script>
 <script>
 	var	playlist = [	
 <?php $this->options->music() ?>
@@ -39,8 +39,8 @@
   var isRotate = 1;
   var autoplay = <?php $this->options->zdbf() ?>;  
 </script>
-<script src="<?php $this->options->themeUrl('js/player.js'); ?>" data-no-instant></script>
-<script  data-no-instant>
+<script src="<?php $this->options->themeUrl('js/player.js'); ?>"></script>
+<script>
 function bgChange(){
 	var lis= $('.lib');
 	for(var i=0; i<lis.length; i+=2)
@@ -50,7 +50,7 @@ window.onload = bgChange;
 </script>
 <?php endif; ?>
 <?php if ($this->options->Zoom == 'able'): ?>
-<script type="text/javascript" data-no-instant>
+<script type="text/javascript">
         var setupContents = function () {
             $(".article-content img").each(function() {
                 $(this).attr('data-action', 'zoom');
@@ -61,7 +61,7 @@ window.onload = bgChange;
 </script>
 <?php endif; ?>
 <?php if ($this->options->Copyright == 'able'): ?>
-<script data-no-instant>
+<script>
 document.body.addEventListener('copy', function (e) {
     if (window.getSelection().toString() && window.getSelection().toString().length > 42) {
         setClipboardText(e);
@@ -94,7 +94,7 @@ function setClipboardText(event) {
 </script>
 <?php endif; ?>
 <?php if ($this->options->Title== 'able'): ?>
-<script type="text/javascript" data-no-instant> 
+<script type="text/javascript"> 
 function scroll() { 
 var titleInfo = document.title;  
 var firstInfo = titleInfo.charAt(0); 
@@ -102,6 +102,17 @@ var lastInfo = titleInfo.substring(1, titleInfo.length);
 document.title = lastInfo + firstInfo; 
 } 
 setInterval("scroll()", 500); 
+</script>
+<?php endif; ?>
+<?php if ($this->options->Lazyload== 'able'): ?>
+<script type="text/javascript" src="<?php $this->options->themeUrl('js/lazyload.js'); ?>"></script>
+<script type="text/javascript">
+jQuery(document).ready(function ($) {
+	$(".article-content img").find('img').lazyload({
+		placeholder: "<?php $this->options->themeUrl('img/loading.gif'); ?>",
+		effect: "fadeIn"
+	});
+});
 </script>
 <?php endif; ?>
 <footer>
@@ -122,37 +133,12 @@ setInterval("scroll()", 500);
 <?php if ($this->options->baiduJavaScript == 'able'): ?>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <?php endif; ?>
-<script src="<?php $this->options->themeUrl('js/all.js'); ?>" data-no-instant></script>
+<script src="<?php $this->options->themeUrl('js/all.js'); ?>"></script>
 <?php if ($this->options->Prism== 'able'): ?>
-<script src="<?php $this->options->themeUrl('js/prism.js'); ?>" data-no-instant></script>
+<script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
 <?php endif; ?>
 <?php if ($this->options->Zoom == 'able'): ?>
-<script src="<?php $this->options->themeUrl('js/zoom.min.js'); ?>" data-no-instant></script>
-<?php endif; ?>
-<?php if ($this->options->Instantclick == 'able'): ?>
-<script src="<?php $this->options->themeUrl('js/instantclick.min.js'); ?>" data-no-instant></script>
-<script data-no-instant>
-InstantClick.on('change', function(isInitialLoad) {
-  if (isInitialLoad === false) {
-    if (typeof MathJax !== 'undefined'){
-      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-} // support MathJax
-    if (typeof prettyPrint !== 'undefined'){
-      prettyPrint();
-} // support google code prettify
-    if (typeof _hmt !== 'undefined'){
-      _hmt.push(['_trackPageview', location.pathname + location.search]);
-}  // support 百度统计
-    if (typeof ga !== 'undefined'){
-        ga('send', 'pageview', location.pathname + location.search);
-}  // support google analytics
-if (typeof Tie !== 'undefined') {
-                        Tie.loader("", true);
-            }//网易云跟帖
-  }
-});
-InstantClick.init('mousedown');
-</script>
+<script src="<?php $this->options->themeUrl('js/zoom.min.js'); ?>"></script>
 <?php endif; ?>
 </body>
 </html>
