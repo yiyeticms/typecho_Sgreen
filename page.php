@@ -9,7 +9,6 @@
       <div class="article-content">
         <?php $this->content(); ?>
       </div>
-     <br>
       <?php $this->need('comments.php'); ?>
     </div>
   </div>

@@ -52,7 +52,7 @@ window.onload = bgChange;
 <?php if ($this->options->Zoom == 'able'): ?>
 <script type="text/javascript">
         var setupContents = function () {
-            $(".article-content img").each(function() {
+            $(".article img").each(function() {
                 $(this).attr('data-action', 'zoom');
             });
           
@@ -116,10 +116,40 @@ $("img").lazyload({
 });
 </script>
 <?php endif; ?>
+<?php if ($this->options->Gress== 'able'): ?>
+<script>
+    $('body').show();
+    $('.version').text(NProgress.version);
+    NProgress.start();
+    setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+
+    $("#b-0").click(function() { NProgress.start(); });
+    $("#b-40").click(function() { NProgress.set(0.4); });
+    $("#b-inc").click(function() { NProgress.inc(); });
+    $("#b-100").click(function() { NProgress.done(); });
+</script>
+<?php endif; ?>
+
+
+
+<script>
+new blurify({
+    images: document.querySelectorAll('#header'),
+    blur: 6,
+    mode: 'auto',
+});      
+</script>
+
+
 <footer>
   <p>
     <?php if ($this->options->Webdt== 'able'): ?>
-    <a href="<?php $this->options->zddt() ?>" target="_blank">站点地图</a> <a href="<?php $this->options->wzdt() ?>" target="_blank">网站地图</a><br>
+    <a href="<?php $this->options->zddt() ?>" target="_blank">站点地图</a> <a href="<?php $this->options->wzdt() ?>" target="_blank">网站地图</a>
+    <?php endif; ?>
+    <?php if ($this->options->Idc== 'able'): ?>
+    <a href="http://www.miitbeian.gov.cn" target="_blank">
+    <?php $this->options->idc() ?>
+    </a><br>
     <?php endif; ?>
     Copyright &copy; 2015-2017 <a href="<?php $this->options->siteUrl(); ?>">
     <?php $this->options->title() ?>
@@ -141,5 +171,6 @@ $("img").lazyload({
 <?php if ($this->options->Zoom == 'able'): ?>
 <script src="<?php $this->options->themeUrl('js/zoom.min.js'); ?>"></script>
 <?php endif; ?>
+<script src="<?php $this->options->themeUrl('js/blurify.js'); ?>"></script>
 </body>
 </html>

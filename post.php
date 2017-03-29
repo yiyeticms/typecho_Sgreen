@@ -22,6 +22,22 @@
       <div class="article-content">
         <?php $this->content(); ?>
       </div>
+      <?php if ($this->options->Reward == 'able'): ?>
+      <div style="padding: 10px 0; margin: 20px auto; width: 90%; font-size:16px; text-align: center;">
+        <div>
+          <?php $this->options->wzdsw(); ?>
+        </div>
+        <label id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}"> <span class="reward-button"> 赞赏作者</span> </label>
+        <div id="QR" style="display: none;">
+          <div id="wechat" style="display: inline-block"> <img id="wechat_qr" src="<?php $this->options->wechat(); ?>">
+            <p>微信打赏</p>
+          </div>
+          <div id="alipay" style="display: inline-block"> <img id="alipay_qr" src="<?php $this->options->zhifubao(); ?>">
+            <p>支付宝打赏</p>
+          </div>
+        </div>
+      </div>
+      <?php endif; ?>
       <div class="post-footer">
         <div class=" post-tags">
           <div class="tag">
@@ -29,16 +45,15 @@
             <?php $this->tags('  ', true, 'none'); ?>
           </div>
           <div class="post-nav">
-            <li class="prev">
-              <?php $this->thePrev('«  %s',''); ?>
-            </li>
-            <li class="next">
-              <?php $this->theNext('%s  »',''); ?>
-            </li>
+            <div class="post-nav-prev post-nav-item">
+              <?php $this->thePrev('%s',''); ?>
+            </div>
+            <div class="post-nav-next post-nav-item">
+              <?php $this->theNext('%s',''); ?>
+            </div>
           </div>
         </div>
       </div>
-     <br>
       <?php $this->need('comments.php'); ?>
     </div>
   </div>

@@ -4,6 +4,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function get_post_view($archive)
 {
     $cid    = $archive->
+
 cid;
     $db     = Typecho_Db::get();
     $prefix = $db->getPrefix();
@@ -67,6 +68,13 @@ function themeConfig($form) {
         'disable', _t('是否启用网站地图'), _t('默认禁止，启用则会在底部增加网站地图显示'));
     $form->addInput($Webdt);
 
+	$Idc= new Typecho_Widget_Helper_Form_Element_Radio('Idc',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('是否启用备案许可证号'), _t('默认禁止，启用则会在底部增加备案许可证号显示'));
+    $form->addInput($Idc);
+
 	$Zoom= new Typecho_Widget_Helper_Form_Element_Radio('Zoom',
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
@@ -102,6 +110,20 @@ function themeConfig($form) {
         'disable', _t('是否启用版权保护功能'), _t('默认禁止，启用则别人在复制你的博文时会自动显示版权所有者'));
     $form->addInput($Copyright);
 
+	$Gress= new Typecho_Widget_Helper_Form_Element_Radio('Gress',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('是否启用加载动画'), _t('默认禁止，启用则在顶部显示加载动画'));
+    $form->addInput($Gress);
+
+	$Reward= new Typecho_Widget_Helper_Form_Element_Radio('Reward',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('是否启用文章打赏'), _t('默认禁止，启用则在文章页面显示打赏按钮'));
+    $form->addInput($Reward);
+
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('你的头像地址【必填】'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个自己的头像'));
     $form->addInput($logoUrl); 
 	
@@ -129,6 +151,20 @@ function themeConfig($form) {
 	$wzdt = new Typecho_Widget_Helper_Form_Element_Text('wzdt', NULL, NULL, _t('你的网站地图'), _t('在这里填入你的网站地图地址，若没有；请使用相关工具或插件生成'));
     $form->addInput($wzdt);
 
+
+        $wzdsw = new Typecho_Widget_Helper_Form_Element_Text('wzdsw', NULL, NULL, _t('你的打赏文案'), _t('在这里填入你的文章打赏文案，默认显示在打赏按钮上方'));
+    $form->addInput($wzdsw);
+
+
+        $wechat = new Typecho_Widget_Helper_Form_Element_Text('wechat', NULL, NULL, _t('你的微信链接'), _t('在这里填入你的微信打赏链接，默认显示在打赏按钮下方'));
+    $form->addInput($wechat);
+
+        $zhifubao = new Typecho_Widget_Helper_Form_Element_Text('zhifubao', NULL, NULL, _t('你的支付宝链接'), _t('在这里填入你的支付宝打赏链接，默认显示在打赏按钮下方'));
+    $form->addInput($zhifubao);
+
+	$idc= new Typecho_Widget_Helper_Form_Element_Text('idc', NULL, NULL, _t('你的备案许可证号'), _t('在这里填入你的备案许可证号，若没有；请忽略或及时备案'));
+    $form->addInput($idc);
+
         $zdtj = new Typecho_Widget_Helper_Form_Element_Textarea('zdtj', NULL, NULL, _t('你的统计代码'), _t('在这里填入你的站点统计代码，默认显示在head区域'));
     $form->addInput($zdtj);
 	
@@ -142,4 +178,4 @@ function themeConfig($form) {
 	$zdbf = new Typecho_Widget_Helper_Form_Element_Text('zdbf', NULL, NULL, _t('音乐是否自动播放【必填】'), _t('在这里填写1或0来控制音乐是否自动播放，1为自动播放、0为不自动播放'));
     $form->addInput($zdbf);
 
-}
+} 

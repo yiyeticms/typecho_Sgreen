@@ -25,7 +25,6 @@ pre {
 	background-color: #f5f5f5;
 	border: 1px solid #ccc;
 	overflow: auto;
-	font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
 }
 
 .main {
@@ -288,19 +287,66 @@ a:hover {
 	margin-top: -1px;
 }
 
-.post-nav .prev {
-	float: left;
-	list-style: none;
+.post-nav {
+  overflow: hidden;
+  /*margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  white-space: nowrap;*/
 }
-
-.post-nav .next {
+.post-nav-item {
+  display: inline-block;
+  /*width: 100%;*/
+  white-space: normal;
+}
+.post-nav-item a {
+  position: relative;
+  display: inline-block;
+  line-height: 25px;
+  font-size: 16px;
+  color: #1ABC9C;
+  border-bottom: none;
+}
+.post-nav-item a:hover {
+  color: #DDD;
+  font-weight: bold;
+  border-bottom: none;
+}
+.post-nav-item a:active {
+  top: 2px;
+}
+.post-nav-item a:before,
+.post-nav-item a:after {
+  display: inline-block;
+  width: 16px;
+  height: 25px;
+  vertical-align: top;
+  opacity: 0.4;
+  background-size: 16px;
+}
+.post-nav-prev a:before {
+  content: ' ';
+  background: url("../img/prev.png") no-repeat 50% 50%;
+  background-size: 8px;
+}
+.post-nav-prev a:hover:before {
+  opacity: 1;
+}
+.post-nav-next {
 	float: right;
-	list-style: none;
 }
 
-.post-nav .next:hover,.post-nav .prev:hover {
-	margin-top: -1px;
-	border-top: 1px solid #555;
+.post-nav-prev {
+	float: left;
+}
+
+.post-nav-next a:after {
+  content: ' ';
+    background: url("../img/next.png") no-repeat 50% 50%;
+  background-size: 8px;
+}
+.post-nav-next a:hover:after {
+  opacity: 1;
 }
 
 @media (max-width:767px) {
@@ -494,7 +540,7 @@ body {
 	background: #FFFFFF;
 	color: #333;
 	font-size: 16px;
-	font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+	font-family: "PT serif",微軟正黑體,微软雅黑,华文细黑,Microsoft Yahei,Hiragino Sans GB,sans-serif;
 	line-height: 1.8;
 }
 
@@ -746,5 +792,36 @@ button, input, textarea {
     -webkit-appearance: none;
     outline: 0;
     -webkit-tap-highlight-color: transparent;
-    font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+    font-family: "PT serif",微軟正黑體,微软雅黑,华文细黑,Microsoft Yahei,Hiragino Sans GB,sans-serif;
+}
+
+.reward-button {
+    font-size: 16px;
+    line-height: 30px;
+    position: relative;
+    display: block;
+    width: 60pt;
+    margin: 0 auto;
+    padding: 0;
+    -webkit-user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    border: 1px solid #1ABC9C;
+    border-radius: 4px;
+    background: #1ABC9C;
+}
+
+#QR {
+    padding-top: 20px;
+}
+
+#wechat_qr {
+    width: 120px;
+	height: 120px;
+}
+
+#alipay_qr {
+    width: 120px;
+	height: 120px;
 }

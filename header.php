@@ -26,6 +26,10 @@
 <?php if ($this->options->Zoom == 'able'): ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/zoom.css'); ?>">
 <?php endif; ?>
+<?php if ($this->options->Gress== 'able'): ?>
+<link rel="stylesheet" href="<?php $this->options->themeUrl('css/gress.css'); ?>">
+<script src="<?php $this->options->themeUrl('js/gress.js'); ?>"></script>
+<?php endif; ?>
 <link href="<?php $this->options->ico() ?>" rel="shortcut icon">
 <?php $this->options->zdtj() ?>
 </head>
@@ -37,7 +41,7 @@
       </a></span> <span class="intro-siteinfo">
       <?php $this->options->description() ?>
       </span> <span class="social"> <a href="<?php $this->options->qqlink(); ?>" target="_blank"><i class="iconfont icon-qq"></i></a> <a href="<?php $this->options->mlink(); ?>" target="_blank"><i class="iconfont icon-mail"></i></a> <a href="<?php $this->options->wlink(); ?>" target="_blank"><i class="iconfont icon-weibo"></i></a> <a href="<?php $this->options->glink(); ?>" target="_blank"><i class="iconfont icon-github"></i></a> <a href="<?php $this->options->qzlink(); ?>" target="_blank"><i class="iconfont icon-qzone"></i></a> </span> </div>
-<?php if ($this->options->search == 'able'): ?>
+    <?php if ($this->options->search == 'able'): ?>
     <div class="search">
       <form role="search" method="get" class="search-form is-active" action="/index.php">
         <label> <span class="screen-reader-text">搜索：</span>
@@ -45,7 +49,7 @@
         </label>
       </form>
     </div>
-<?php endif; ?>
+    <?php endif; ?>
     <nav>
       <div class="collapse"> <i class="iconfont icon-menu"></i></div>
       <ul class="bar">
