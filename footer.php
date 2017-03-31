@@ -129,18 +129,6 @@ $("img").lazyload({
     $("#b-100").click(function() { NProgress.done(); });
 </script>
 <?php endif; ?>
-
-
-
-<script>
-new blurify({
-    images: document.querySelectorAll('#header'),
-    blur: 6,
-    mode: 'auto',
-});      
-</script>
-
-
 <footer>
   <p>
     <?php if ($this->options->Webdt== 'able'): ?>
@@ -171,6 +159,5 @@ new blurify({
 <?php if ($this->options->Zoom == 'able'): ?>
 <script src="<?php $this->options->themeUrl('js/zoom.min.js'); ?>"></script>
 <?php endif; ?>
-<script src="<?php $this->options->themeUrl('js/blurify.js'); ?>"></script>
 </body>
 </html>
