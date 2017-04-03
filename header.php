@@ -15,7 +15,7 @@
 <?php $this->options->title(); ?>
 </title>
 <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&atom=&rss1=&rss2='); ?>
-<link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
+<link rel="stylesheet" href="<?php $this->options->themeUrl('css/' . $this->options->css . '.css'); ?>">
 <?php if ($this->options->Prism== 'able'): ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/prism.css'); ?>">
 <?php endif; ?>

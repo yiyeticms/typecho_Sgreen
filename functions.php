@@ -30,7 +30,24 @@ array_push($views, $cid);
     }
     echo $row['views'];
 }
+	
 function themeConfig($form) {
+
+$css = new Typecho_Widget_Helper_Form_Element_Radio('css',
+array(
+'green' => _t('小草绿'),
+'black' => _t('夜间黑'),
+'blue' => _t('绅士蓝'),
+'pink' => _t('少女粉'),
+'gules' => _t('姨妈红'),
+'orange' => _t('伊藤橙'),
+'violet' => _t('基佬紫'),
+'gray' => _t('低调灰'),
+),
+'gray',
+_t('网站外观配色选择【必填】'));
+ 
+$form->addInput($css->multiMode());
 
 	$Abstract= new Typecho_Widget_Helper_Form_Element_Radio('Abstract',
         array('able' => _t('启用'),

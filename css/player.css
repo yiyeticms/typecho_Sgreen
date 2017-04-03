@@ -207,7 +207,7 @@
 	box-shadow: blockbox-shadow:1px 0px 5px 2px rgb(36,95,88);
 }
 
-#pContent .ssBtn {
+/*#pContent .ssBtn {
 	width: 20px;
 	height: 60px;
 	background: #1ABC9C none repeat scroll 0% 0%;
@@ -219,7 +219,7 @@
 	cursor: pointer;
 	display: box-shadow:;
 	float: right;
-}
+}*/
 
 #pContent .ssBtn .adf {
 	float: left;
