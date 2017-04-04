@@ -130,7 +130,7 @@ $("img").lazyload({
 </script>
 <?php endif; ?>
 <footer>
-  <p>
+<p>
     <?php if ($this->options->Webdt== 'able'): ?>
     <a href="<?php $this->options->zddt() ?>" target="_blank">站点地图</a> <a href="<?php $this->options->wzdt() ?>" target="_blank">网站地图</a>
     <?php endif; ?>
@@ -142,7 +142,8 @@ $("img").lazyload({
     Copyright &copy; 2015-2017 <a href="<?php $this->options->siteUrl(); ?>">
     <?php $this->options->title() ?>
     </a> <br>
-    Powered by <a href="http://typecho.org/">Typecho</a>自豪的采用<a href="http://yiyeti.cc/zheteng/132.html" target="_blank">Sgreen</a>主题</p>
+    Powered by <a href="http://typecho.org/">Typecho</a> 自豪的采用<a href="http://yiyeti.cc/zheteng/132.html" target="_blank">Sgreen</a>主题
+</p>
   <?php $this->footer(); ?>
 </footer>
 <div class="toTop">TOP</div>

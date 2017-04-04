@@ -259,7 +259,10 @@ a:hover {
 
 .post-tags {
 	margin-top: 20px;
-	text-align: center;
+}
+
+.social-share {
+	float: right;
 }
 
 .post-tags .tag {
