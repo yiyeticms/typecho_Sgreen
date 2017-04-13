@@ -130,20 +130,23 @@ $("img").lazyload({
 </script>
 <?php endif; ?>
 <footer>
-<p>
+<div>
     <?php if ($this->options->Webdt== 'able'): ?>
-    <a href="<?php $this->options->zddt() ?>" target="_blank">站点地图</a> <a href="<?php $this->options->wzdt() ?>" target="_blank">网站地图</a>
+    <a href="<?php $this->options->zddt() ?>" target="_blank">站点地图</a> <a href="<?php $this->options->wzdt() ?>" target="_blank">网站地图</a><br>
     <?php endif; ?>
     <?php if ($this->options->Idc== 'able'): ?>
     <a href="http://www.miitbeian.gov.cn" target="_blank">
     <?php $this->options->idc() ?>
-    </a><br>
+    </a> 
+    <?php endif; ?>
+<?php if ($this->options->Ipc== 'able'): ?>
+<a target="_blank" href="<?php $this->options->ipcurl() ?>" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="<?php $this->options->themeUrl('img/icp.png'); ?>" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 0px;"><?php $this->options->ipc() ?></p></a><br>
     <?php endif; ?>
     Copyright &copy; 2015-2017 <a href="<?php $this->options->siteUrl(); ?>">
     <?php $this->options->title() ?>
-    </a> <br>
+    </a><br>
     Powered by <a href="http://typecho.org/">Typecho</a> 自豪的采用<a href="http://yiyeti.cc/zheteng/132.html" target="_blank">Sgreen</a>主题
-</p>
+</div>
   <?php $this->footer(); ?>
 </footer>
 <div class="toTop">TOP</div>

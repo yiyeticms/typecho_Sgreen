@@ -89,8 +89,15 @@ $form->addInput($css->multiMode());
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('是否启用备案许可证号'), _t('默认禁止，启用则会在底部增加备案许可证号显示'));
+        'disable', _t('是否启用工信部许可证号'), _t('默认禁止，启用则会在底部增加工信备案许可证号显示'));
     $form->addInput($Idc);
+
+	$Ipc= new Typecho_Widget_Helper_Form_Element_Radio('Ipc',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('是否启用公安部许可证号'), _t('默认禁止，启用则会在底部增加公安备案许可证号显示'));
+    $form->addInput($Ipc);
 
 	$Zoom= new Typecho_Widget_Helper_Form_Element_Radio('Zoom',
         array('able' => _t('启用'),
@@ -179,8 +186,14 @@ $form->addInput($css->multiMode());
         $zhifubao = new Typecho_Widget_Helper_Form_Element_Text('zhifubao', NULL, NULL, _t('你的支付宝链接'), _t('在这里填入你的支付宝打赏链接，默认显示在打赏按钮下方'));
     $form->addInput($zhifubao);
 
-	$idc= new Typecho_Widget_Helper_Form_Element_Text('idc', NULL, NULL, _t('你的备案许可证号'), _t('在这里填入你的备案许可证号，若没有；请忽略或及时备案'));
+	$idc= new Typecho_Widget_Helper_Form_Element_Text('idc', NULL, NULL, _t('你的工信备案许可证号'), _t('在这里填入你的备案许可证号，若没有；请忽略或及时备案'));
     $form->addInput($idc);
+
+	$ipcurl= new Typecho_Widget_Helper_Form_Element_Text('ipcurl', NULL, NULL, _t('你的公安备案许可证链接'), _t('在这里填入你的公安备案许可证链接，若没有；请忽略或及时备案'));
+    $form->addInput($ipcurl);
+
+	$ipc= new Typecho_Widget_Helper_Form_Element_Text('ipc', NULL, NULL, _t('你的公安备案许可证号'), _t('在这里填入你的公安备案许可证号，若没有；请忽略或及时备案'));
+    $form->addInput($ipc);
 
         $zdtj = new Typecho_Widget_Helper_Form_Element_Textarea('zdtj', NULL, NULL, _t('你的统计代码'), _t('在这里填入你的站点统计代码，默认显示在head区域'));
     $form->addInput($zdtj);
