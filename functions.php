@@ -105,13 +105,13 @@ $form->addInput($css->multiMode());
         ),
         'disable', _t('是否启用灯箱功能'), _t('默认禁止，启用则会在文章或页面加载灯箱效果'));
     $form->addInput($Zoom);
-
-    $Lazyload= new Typecho_Widget_Helper_Form_Element_Radio('Lazyload',
+    
+    	$Demo= new Typecho_Widget_Helper_Form_Element_Radio('Demo',
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('是否启用图片懒加载'), _t('默认禁止，启用则会使用图片懒加载功能'));
-    $form->addInput($Lazyload);
+        'disable', _t('是否启用公告功能'), _t('默认禁止，启用则会在头像处弹窗显示公告'));
+    $form->addInput($Demo);
 
 	$Prism= new Typecho_Widget_Helper_Form_Element_Radio('Prism',
         array('able' => _t('启用'),
@@ -147,6 +147,13 @@ $form->addInput($css->multiMode());
         ),
         'disable', _t('是否启用文章打赏'), _t('默认禁止，启用则在文章页面显示打赏按钮'));
     $form->addInput($Reward);
+    
+    	$Compress= new Typecho_Widget_Helper_Form_Element_Radio('Compress',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('是否启用HTML代码压缩功能'), _t('默认禁止，启用则会gzip压缩HTML代码'));
+    $form->addInput($Compress);
 
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('你的头像地址【必填】'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个自己的头像'));
     $form->addInput($logoUrl); 
@@ -175,15 +182,18 @@ $form->addInput($css->multiMode());
 	$wzdt = new Typecho_Widget_Helper_Form_Element_Text('wzdt', NULL, NULL, _t('你的网站地图'), _t('在这里填入你的网站地图地址，若没有；请使用相关工具或插件生成'));
     $form->addInput($wzdt);
 
-
-        $wzdsw = new Typecho_Widget_Helper_Form_Element_Text('wzdsw', NULL, NULL, _t('你的打赏文案'), _t('在这里填入你的文章打赏文案，默认显示在打赏按钮上方'));
+    $wzdsw = new Typecho_Widget_Helper_Form_Element_Text('wzdsw', NULL, NULL, _t('你的打赏文案'), _t('在这里填入你的文章打赏文案，默认显示在打赏按钮上方'));
+    
     $form->addInput($wzdsw);
+    
+    $jrxq = new Typecho_Widget_Helper_Form_Element_Textarea('jrxq', NULL, NULL, _t('你的今日心情And站点公告'), _t('在这里填入你的今日心情And站点公告，默认弹窗显示在头像处，默认支持html'));
+    
+    $form->addInput($jrxq);
 
-
-        $wechat = new Typecho_Widget_Helper_Form_Element_Text('wechat', NULL, NULL, _t('你的微信链接'), _t('在这里填入你的微信打赏链接，默认显示在打赏按钮下方'));
+    $wechat = new Typecho_Widget_Helper_Form_Element_Text('wechat', NULL, NULL, _t('你的微信链接'), _t('在这里填入你的微信打赏链接，默认显示在打赏按钮下方'));
     $form->addInput($wechat);
 
-        $zhifubao = new Typecho_Widget_Helper_Form_Element_Text('zhifubao', NULL, NULL, _t('你的支付宝链接'), _t('在这里填入你的支付宝打赏链接，默认显示在打赏按钮下方'));
+    $zhifubao = new Typecho_Widget_Helper_Form_Element_Text('zhifubao', NULL, NULL, _t('你的支付宝链接'), _t('在这里填入你的支付宝打赏链接，默认显示在打赏按钮下方'));
     $form->addInput($zhifubao);
 
 	$idc= new Typecho_Widget_Helper_Form_Element_Text('idc', NULL, NULL, _t('你的工信备案许可证号'), _t('在这里填入你的备案许可证号，若没有；请忽略或及时备案'));
@@ -195,7 +205,7 @@ $form->addInput($css->multiMode());
 	$ipc= new Typecho_Widget_Helper_Form_Element_Text('ipc', NULL, NULL, _t('你的公安备案许可证号'), _t('在这里填入你的公安备案许可证号，若没有；请忽略或及时备案'));
     $form->addInput($ipc);
 
-        $zdtj = new Typecho_Widget_Helper_Form_Element_Textarea('zdtj', NULL, NULL, _t('你的统计代码'), _t('在这里填入你的站点统计代码，默认显示在head区域'));
+    $zdtj = new Typecho_Widget_Helper_Form_Element_Textarea('zdtj', NULL, NULL, _t('你的统计代码'), _t('在这里填入你的站点统计代码，默认显示在head区域'));
     $form->addInput($zdtj);
 	
 	$music = new Typecho_Widget_Helper_Form_Element_Textarea('music', NULL, NULL, _t('在这里填入你的音乐链接【必填】'), _t('<br>
@@ -209,3 +219,52 @@ $form->addInput($css->multiMode());
     $form->addInput($zdbf);
 
 } 
+
+function compressHtml($html_source) {
+    $chunks = preg_split('/(<!--<nocompress>-->.*?<!--<\/nocompress>-->|<nocompress>.*?<\/nocompress>|<pre.*?\/pre>|<textarea.*?\/textarea>|<script.*?\/script>)/msi', $html_source, -1, PREG_SPLIT_DELIM_CAPTURE);
+    $compress = '';
+    foreach ($chunks as $c) {
+        if (strtolower(substr($c, 0, 19)) == '<!--<nocompress>-->') {
+            $c = substr($c, 19, strlen($c) - 19 - 20);
+            $compress .= $c;
+            continue;
+        } else if (strtolower(substr($c, 0, 12)) == '<nocompress>') {
+            $c = substr($c, 12, strlen($c) - 12 - 13);
+            $compress .= $c;
+            continue;
+        } else if (strtolower(substr($c, 0, 4)) == '<pre' || strtolower(substr($c, 0, 9)) == '<textarea') {
+            $compress .= $c;
+            continue;
+        } else if (strtolower(substr($c, 0, 7)) == '<script' && strpos($c, '//') != false && (strpos($c, "\r") !== false || strpos($c, "\n") !== false)) {
+            $tmps = preg_split('/(\r|\n)/ms', $c, -1, PREG_SPLIT_NO_EMPTY);
+            $c = '';
+            foreach ($tmps as $tmp) {
+                if (strpos($tmp, '//') !== false) {
+                    if (substr(trim($tmp), 0, 2) == '//') {
+                        continue;
+                    }
+                    $chars = preg_split('//', $tmp, -1, PREG_SPLIT_NO_EMPTY);
+                    $is_quot = $is_apos = false;
+                    foreach ($chars as $key => $char) {
+                        if ($char == '"' && $chars[$key - 1] != '\\' && !$is_apos) {
+                            $is_quot = !$is_quot;
+                        } else if ($char == '\'' && $chars[$key - 1] != '\\' && !$is_quot) {
+                            $is_apos = !$is_apos;
+                        } else if ($char == '/' && $chars[$key + 1] == '/' && !$is_quot && !$is_apos) {
+                            $tmp = substr($tmp, 0, $key);
+                            break;
+                        }
+                    }
+                }
+                $c .= $tmp;
+            }
+        }
+        $c = preg_replace('/[\\n\\r\\t]+/', ' ', $c);
+        $c = preg_replace('/\\s{2,}/', ' ', $c);
+        $c = preg_replace('/>\\s</', '> <', $c);
+        $c = preg_replace('/\\/\\*.*?\\*\\//i', '', $c);
+        $c = preg_replace('/<!--[^!]*-->/', '', $c);
+        $compress .= $c;
+    }
+    return $compress;
+}

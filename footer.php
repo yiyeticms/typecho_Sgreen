@@ -50,6 +50,12 @@ window.onload = bgChange;
 </script>
 <?php endif; ?>
 <?php if ($this->options->Zoom == 'able'): ?>
+<?php if ($this->options->baiduJavaScript == 'disable'): ?>
+<script src="<?php $this->options->themeUrl('js/jquery.min.js'); ?>"></script>
+<?php endif; ?>
+<?php if ($this->options->baiduJavaScript == 'able'): ?>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<?php endif; ?>
 <script type="text/javascript">
         var setupContents = function () {
             $(".article img").each(function() {
@@ -104,19 +110,13 @@ document.title = lastInfo + firstInfo;
 setInterval("scroll()", 500); 
 </script>
 <?php endif; ?>
-<?php if ($this->options->Lazyload== 'able'): ?>
-<script type="text/javascript" src="<?php $this->options->themeUrl('js/lazyload.js'); ?>"></script>
-<script type="text/javascript">
-jQuery(document).ready(
-function($){
-$("img").lazyload({
-     placeholder : "<?php $this->options->themeUrl('img/loading.gif'); ?>",
-     effect      : "fadeIn"
-});
-});
-</script>
-<?php endif; ?>
 <?php if ($this->options->Gress== 'able'): ?>
+<?php if ($this->options->baiduJavaScript == 'disable'): ?>
+<script src="<?php $this->options->themeUrl('js/jquery.min.js'); ?>"></script>
+<?php endif; ?>
+<?php if ($this->options->baiduJavaScript == 'able'): ?>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<?php endif; ?>
 <script>
     $('body').show();
     $('.version').text(NProgress.version);
@@ -127,6 +127,22 @@ $("img").lazyload({
     $("#b-40").click(function() { NProgress.set(0.4); });
     $("#b-inc").click(function() { NProgress.inc(); });
     $("#b-100").click(function() { NProgress.done(); });
+</script>
+<?php endif; ?>
+<?php if ($this->options->Demo== 'able'): ?>
+<script>
+$(function(){
+	$("#demo").click(function(){
+swal({   
+			title: "今日心情",   
+			text: '<?php $this->options->jrxq() ?>',   
+			imageUrl: "",
+			html: true,
+			timer: 5000,   
+			showConfirmButton: false
+	});
+	});
+});
 </script>
 <?php endif; ?>
 <footer>
@@ -165,3 +181,6 @@ $("img").lazyload({
 <?php endif; ?>
 </body>
 </html>
+<?php if ($this->options->Compress == 'able'): ?>
+<?php $html_source = ob_get_contents(); ob_clean(); print compressHtml($html_source); ob_end_flush(); ?>
+<?php endif; ?>

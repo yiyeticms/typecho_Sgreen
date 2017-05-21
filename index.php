@@ -3,7 +3,7 @@
  * 这是一款小清新绿色Typecho主题。
  * @package Sgreen Theme 
  * @author 一夜涕
- * @version 2.7
+ * @version 2.8
  * @link http://yiyeti.cc
  */
 

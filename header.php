@@ -2,18 +2,15 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<title>
-<?php $this->archiveTitle(array(
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?>
-<?php $this->options->title(); ?>
-</title>
+<?php $this->options->title(); ?><?php if($this->is('index')): ?> - 一个专注于发表原创文章的小清新博客<?php endif; ?></title>
 <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&atom=&rss1=&rss2='); ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/' . $this->options->css . '.css'); ?>">
 <?php if ($this->options->Prism== 'able'): ?>
@@ -32,11 +29,16 @@
 <?php endif; ?>
 <link href="<?php $this->options->ico() ?>" rel="shortcut icon">
 <?php $this->options->zdtj() ?>
+<?php if ($this->options->Demo== 'able'): ?>
+<link rel="stylesheet" href="<?php $this->options->themeUrl('css/sweetalert.css'); ?>">
+<script src="<?php $this->options->themeUrl('js/sweetalert.min.js'); ?>"></script>
+<?php endif; ?>
 </head>
 <body>
 <header>
   <div class="main">
-    <div class="intro"> <img src="<?php $this->options->logoUrl(); ?>" class="intro-logo"/> <span class="intro-sitename"><a href="<?php $this->options->siteUrl(); ?>">
+    <div class="intro">
+      <a href="javascript:;" id="demo"><img src="<?php $this->options->logoUrl(); ?>" class="intro-logo"></a><span class="intro-sitename"><a href="<?php $this->options->siteUrl(); ?>">
       <?php $this->options->title() ?>
       </a></span> <span class="intro-siteinfo">
       <?php $this->options->description() ?>
