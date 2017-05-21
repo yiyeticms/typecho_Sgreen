@@ -155,7 +155,7 @@ nav ul li:hover {
 }
 nav ul li a {
 	display: block;
-	color: #50BBA7;
+	color: #3ac19f;
 }
 nav ul li a:hover {
 	color: #fff;
@@ -201,7 +201,7 @@ nav ul li a {
 }
 .article-title {
 	text-align: center;
-	color: #50BBA7;
+	color: #3ac19f;
 	font-weight: 700;
 	font-size: 26px;
 }
@@ -361,7 +361,7 @@ nav ul li a {
 }
 .archive-title {
 	display: block;
-	color: #50BBA7;
+	color: #3ac19f;
 	text-align: center;
 	font-size: 26px;
 }
@@ -373,20 +373,20 @@ p {
 	padding: 0.3em;
 }
 blockquote {
-	border-left: 5px solid #50BBA7;
+	border-left: 5px solid #3ac19f;
 	padding-left: 10px;
 	background: #fff;
 }
 .article-title a {
-	color: #50BBA7;
+	color: #3ac19f;
 }
 header {
 	width: 100%;
-	background: #50BBA7;
+	background: #3ac19f;
 }
 footer {
 	margin: 20px auto;
-	color: #50BBA7;
+	color: #3ac19f;
 	text-align: center;
 }
 .toTop {
@@ -397,7 +397,7 @@ footer {
 	display: none;
 	width: 36px;
 	height: 36px;
-	background: #50BBA7;
+	background: #3ac19f;
 	color: #fff;
 	text-align: center;
 	line-height: 36px;
@@ -409,23 +409,23 @@ footer {
 }
 .article-time {
 	display: block;
-	color: #50BBA7;
+	color: #3ac19f;
 	text-align: center;
 	font-size: 12px;
 }
 a,u {
 	position: relative;
 	display: inline-block;
-	color: #50BBA7;
+	color: #3ac19f;
 	text-decoration: none;
 }
 .readmore a:hover {
-	background: #50BBA7;
+	background: #3ac19f;
 	color: #fff;
 }
 .readmore a {
 	padding: 0 10px;
-	color: #50BBA7;
+	color: #3ac19f;
 	transition: all .5s;
 }
 body {
@@ -451,7 +451,7 @@ body {
 	display: block;
 	margin: 0;
 	padding-bottom: 0;
-	color: #50BBA7;
+	color: #3ac19f;
 	border-bottom: 1px solid #ddd;
 	margin-top: 30px;
 }
@@ -599,9 +599,9 @@ button.submit {
 	width: 100%;
 	height: 38px;
 	color: #fff;
-	border: 1px solid #50BBA7;
+	border: 1px solid #3ac19f;
 	outline: none;
-	background: #50BBA7;
+	background: #3ac19f;
 }
 button.submit:hover {
 	border-color: #ddd;
@@ -659,9 +659,9 @@ button, input, textarea {
 	text-align: center;
 	vertical-align: middle;
 	color: #fff;
-	border: 1px solid #50BBA7;
+	border: 1px solid #3ac19f;
 	border-radius: 4px;
-	background: #50BBA7;
+	background: #3ac19f;
 }
 #QR {
 	padding-top: 20px;
@@ -677,7 +677,7 @@ button, input, textarea {
 #pContent .ssBtn {
 	width: 20px;
 	height: 60px;
-	background: #50BBA7 none repeat scroll 0% 0%;
+	background: #3ac19f none repeat scroll 0% 0%;
 	position: relative;
 	right: 0px;
 	bottom: 0px;
