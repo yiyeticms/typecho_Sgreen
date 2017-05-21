@@ -58,6 +58,5 @@
     </div>
     <?php $this->need('comments.php'); ?>
   </div>
-  </div>
 </content>
 <?php $this->need('footer.php'); ?>
