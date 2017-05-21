@@ -247,11 +247,11 @@ nav ul li a {
 }
 .prev a:before {
 	content: ' ';
-	background: url("../img/prev.png") no-repeat 20% 50%;
+	background: url("../img/prev.png") no-repeat 50% 60%;
 }
 .next a:after {
 	content: ' ';
-	background: url("../img/next.png") no-repeat 0% 50%;
+	background: url("../img/next.png") no-repeat 50% 60%;
 }
 .post-nav-item a:before, .post-nav-item a:after {
 	display: inline-block;
