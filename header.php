@@ -10,7 +10,7 @@
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?>
-<?php $this->options->title(); ?><?php if($this->is('index')): ?> - 一个专注于发表原创文章的小清新博客<?php endif; ?></title>
+<?php $this->options->title(); ?></title>
 <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&atom=&rss1=&rss2='); ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/' . $this->options->css . '.css'); ?>">
 <?php if ($this->options->Prism== 'able'): ?>
