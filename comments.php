@@ -40,16 +40,16 @@
         </label>
         <input type="email" name="mail" id="mail" class="text form-control" placeholder="<?php _e('（必填）'); ?>" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> />
       </p>
-      <!--<p>
+      <p>
         <label for="url"<?php if ($this->options->commentsRequireURL): ?> class="required"<?php endif; ?>>
         <?php _e('网站'); ?>
         </label>
         <input type="url" name="url" id="url" class="text form-control" placeholder="<?php _e('（http://）'); ?>" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
-      </p>-->
+      </p>
       <?php endif; ?>
       <div class="col1">
         <p>
-          <textarea rows="8" cols="50" name="text" id="textarea" placeholder="<?php _e('请文明发言，期待您的精彩评论！'); ?>" class="textarea" required ><?php $this->remember('text'); ?>
+          <textarea rows="8" cols="50" name="text" id="textarea" placeholder="<?php _e('请文明发言，期待您的精彩评论！'); ?>" class="textarea form-control" required ><?php $this->remember('text'); ?>
 </textarea>
         </p>
       </div>
