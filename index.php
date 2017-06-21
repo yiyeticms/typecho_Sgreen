@@ -3,7 +3,7 @@
  * 这是一款小清新绿色Typecho主题。
  * @package Sgreen Theme 
  * @author 一夜涕
- * @version 2.8
+ * @version 3.0
  * @link http://yiyeti.cc
  */
 
@@ -22,7 +22,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
       <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished">
         <?php $this->date('Y-m-d'); ?>
       </time>
-      |
+      | 
       <?php _e('分类：'); ?>
       <?php $this->category(','); ?>
       | <a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments">

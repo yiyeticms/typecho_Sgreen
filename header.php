@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!DOCTYPE HTML>
-<html>
+<html lang="en" xmlns="//www.w3.org/1999/xhtml">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,8 +10,8 @@
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?>
-<?php $this->options->title(); ?></title>
-<?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&atom=&rss1=&rss2='); ?>
+<?php $this->options->title(); ?><?php if($this->is('index')): ?> - <?php $this->options->description() ?><?php endif; ?></title>
+<?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&atom='); ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/' . $this->options->css . '.css'); ?>">
 <?php if ($this->options->Prism== 'able'): ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/prism.css'); ?>">
@@ -28,7 +28,6 @@
 <script src="<?php $this->options->themeUrl('js/gress.js'); ?>"></script>
 <?php endif; ?>
 <link href="<?php $this->options->ico() ?>" rel="shortcut icon">
-<?php $this->options->zdtj() ?>
 <?php if ($this->options->Demo== 'able'): ?>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/sweetalert.css'); ?>">
 <script src="<?php $this->options->themeUrl('js/sweetalert.min.js'); ?>"></script>
@@ -46,8 +45,7 @@
     <?php if ($this->options->search == 'able'): ?>
     <div class="search">
       <form role="search" method="get" class="search-form is-active" action="/index.php">
-        <label> <span class="screen-reader-text">搜索：</span>
-        <input type="search" class="search-field" placeholder="在此搜索…" value="" name="s">
+        <label> <input type="search" class="search-field" placeholder="在此搜索…" value="" name="s">
         </label>
       </form>
     </div>

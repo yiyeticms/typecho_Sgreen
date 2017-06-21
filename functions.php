@@ -152,7 +152,7 @@ $form->addInput($css->multiMode());
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('是否启用HTML代码压缩功能'), _t('默认禁止，启用则会gzip压缩HTML代码'));
+        'disable', _t('是否启用HTML代码压缩功能'), _t('默认禁止，启用则会gzip压缩HTML代码，如程序环境不支持导致前台报错请关闭该功能'));
     $form->addInput($Compress);
 
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('你的头像地址【必填】'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个自己的头像'));
@@ -186,7 +186,7 @@ $form->addInput($css->multiMode());
     
     $form->addInput($wzdsw);
     
-    $jrxq = new Typecho_Widget_Helper_Form_Element_Textarea('jrxq', NULL, NULL, _t('你的今日心情And站点公告'), _t('在这里填入你的今日心情And站点公告，默认弹窗显示在头像处，默认支持html'));
+    $jrxq = new Typecho_Widget_Helper_Form_Element_Textarea('jrxq', NULL, NULL, _t('你的站点公告'), _t('在这里填入你的站点公告，默认弹窗显示在头像处，默认支持html'));
     
     $form->addInput($jrxq);
 
@@ -204,9 +204,6 @@ $form->addInput($css->multiMode());
 
 	$ipc= new Typecho_Widget_Helper_Form_Element_Text('ipc', NULL, NULL, _t('你的公安备案许可证号'), _t('在这里填入你的公安备案许可证号，若没有；请忽略或及时备案'));
     $form->addInput($ipc);
-
-    $zdtj = new Typecho_Widget_Helper_Form_Element_Textarea('zdtj', NULL, NULL, _t('你的统计代码'), _t('在这里填入你的站点统计代码，默认显示在head区域'));
-    $form->addInput($zdtj);
 	
 	$music = new Typecho_Widget_Helper_Form_Element_Textarea('music', NULL, NULL, _t('在这里填入你的音乐链接【必填】'), _t('<br>
 <h4 style="margin-bottom:5px;margin-top:12px;">添加网易云音乐(需主机支持curl扩展)</h4>

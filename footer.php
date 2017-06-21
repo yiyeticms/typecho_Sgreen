@@ -134,7 +134,7 @@ setInterval("scroll()", 500);
 $(function(){
 	$("#demo").click(function(){
 swal({   
-			title: "今日心情",   
+			title: "站点公告",   
 			text: '<?php $this->options->jrxq() ?>',   
 			imageUrl: "",
 			html: true,

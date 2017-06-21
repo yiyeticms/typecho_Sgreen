@@ -66,7 +66,7 @@
             border-radius: 3px;
             text-align: center;
             cursor: pointer;
-            background: #3ac19f;
+            background: #009999;
             font-weight: 500;
             line-height: 14px;
             letter-spacing: 1px;
@@ -80,7 +80,7 @@
             text-shadow:none;
         }
         .index404:hover{
-            background-color: #3ac19f;
+            background-color: #009999;
             color: #fff;
         }
     </style>
